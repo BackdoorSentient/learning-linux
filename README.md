@@ -10,36 +10,56 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Phase-6-blue" />
-  <img src="https://img.shields.io/badge/Topics-40+-orange" />
+  <img src="https://img.shields.io/badge/Topics-45+-orange" />
   <img src="https://img.shields.io/badge/Projects-10+-green" />
+  <img src="https://img.shields.io/badge/Scripts-5+-yellow" />
   <img src="https://img.shields.io/badge/Format-Notes%20%26%20Scripts-purple" />
-  <img src="https://img.shields.io/badge/License-MIT-lightgrey" />
+  <img src="https://img.shields.io/badge/Status-Active-brightgreen" />
 </p>
 
 ---
 
 ## 📁 Repository Structure
+
+```
 learning-linux/
 ├── README.md
+├── learning_path.md                      ← full topic reference
+│
 ├── phase-1-foundation/
-│   ├── notes.md
+│   ├── notes.md                          ← Linux basics, navigation, permissions
 │   └── exercises/
+│       └── exercise-log.md              ← your daily practice log
+│
 ├── phase-2-shell/
-│   ├── notes.md
+│   ├── notes.md                          ← shell, scripting, pipes, text tools, jq, curl
 │   └── scripts/
+│       ├── system-info.sh               ← prints system info report
+│       └── backup.sh                    ← backup with date stamp + rotation
+│
 ├── phase-3-sysadmin/
-│   ├── notes.md
+│   ├── notes.md                          ← processes, disk, systemd, SSH, networking
 │   └── configs/
+│       └── nginx-reverse-proxy.conf     ← nginx config for FastAPI
+│
 ├── phase-4-networking/
-│   ├── notes.md
+│   ├── notes.md                          ← UFW, iptables, openssl, logs, hardening
 │   └── firewall-rules/
+│       └── ufw-setup.sh                 ← standard UFW setup script
+│
 ├── phase-5-advanced/
-│   ├── notes.md
+│   ├── notes.md                          ← Docker, kernel, cron, Ansible, performance, AI/ML
 │   └── projects/
+│       └── server-setup.sh              ← full server provisioning script
+│
+├── scripts/
+│   └── monitor.sh                       ← live server health dashboard
+│
 └── cheatsheets/
-├── commands.md
-├── permissions.md
-└── vim.md
+    ├── commands.md                       ← most-used commands quick reference
+    ├── permissions.md                   ← chmod, chown, octal, ACLs
+    └── vim.md                           ← vim survival guide
+```
 
 ---
 
@@ -47,98 +67,43 @@ learning-linux/
 
 | Phase | Topic | Duration | Status |
 |-------|-------|----------|--------|
-| 1 | Foundation — Getting Comfortable | 2 weeks | 🔄 In Progress |
-| 2 | Shell Mastery — Working Faster | 3 weeks | ⏳ Upcoming |
-| 3 | System Administration | 3 weeks | ⏳ Upcoming |
-| 4 | Networking & Security | 3 weeks | ⏳ Upcoming |
-| 5 | Advanced Topics | 4 weeks | ⏳ Upcoming |
+| 1 | [Foundation — Getting Comfortable](./phase-1-foundation/notes.md) | 2 weeks | 🔄 In Progress |
+| 2 | [Shell Mastery — Working Faster](./phase-2-shell/notes.md) | 3 weeks | ⏳ Upcoming |
+| 3 | [System Administration](./phase-3-sysadmin/notes.md) | 3 weeks | ⏳ Upcoming |
+| 4 | [Networking & Security](./phase-4-networking/notes.md) | 3 weeks | ⏳ Upcoming |
+| 5 | [Advanced Topics](./phase-5-advanced/notes.md) | 4 weeks | ⏳ Upcoming |
 | 6 | Projects & Practice | Ongoing | ⏳ Upcoming |
 
 ---
 
-## 📖 Phase 1 — Foundation: Getting Comfortable
+## 📖 What Each Phase Covers
 
-> Goal: Navigate the filesystem, manage files, and understand Linux basics entirely from the terminal.
+### Phase 1 — Foundation
+Linux overview, filesystem hierarchy, terminal navigation, package management, users & permissions, text editors, wildcards, symbolic links
 
-- Linux overview & distributions (Ubuntu, Fedora, Arch)
-- Filesystem hierarchy — /, /home, /etc, /var, /bin, /usr
-- Terminal navigation — pwd, ls, cd, mkdir, rm, cp, mv, cat, less
-- Package management — apt, dnf, pacman
-- Users, groups & permissions — chmod, chown, sudo
-- Text editors — nano basics, vim survival skills
+### Phase 2 — Shell Mastery
+What is a shell, shortcuts, I/O redirection, pipes, grep/sed/awk/jq, finding files, environment variables, aliases, bash scripting from zero, functions, error handling, retry logic, job control, tmux, curl advanced usage
 
----
+### Phase 3 — System Administration
+Process management, disk & storage, systemd services, writing service files, systemd-analyze, networking basics, netplan, SSH keys & config, port forwarding, file transfer, user & group admin
 
-## 📖 Phase 2 — Shell Mastery: Working Faster
+### Phase 4 — Networking & Security
+UFW firewall, iptables direct rules, openssl certificates, GPG encryption, log files, logrotate, network troubleshooting, nmap, tcpdump, server hardening, fail2ban
 
-> Goal: Write working bash scripts and use pipes, redirection, and text tools confidently.
-
-- Bash scripting — variables, conditionals, loops, functions
-- I/O redirection & pipes — stdin, stdout, stderr, |, >, >>
-- Text processing — grep, sed, awk, cut, sort, uniq, wc
-- File search — find, locate, which, whereis
-- Environment & shell config — $PATH, .bashrc, alias, export
-- Job control & multiplexing — tmux, bg, fg, jobs, kill
+### Phase 5 — Advanced Topics
+Advanced bash patterns, heredoc, kernel & boot process, Docker internals (cgroups/namespaces), Docker Compose, cron jobs, systemd timers, Ansible playbooks, performance debugging (strace, iostat, iotop), LVM, NFS, Linux for AI/ML workloads
 
 ---
 
-## 📖 Phase 3 — System Administration
+## 🛠️ Scripts Included
 
-> Goal: Manage services, users, disks, and SSH into a remote server independently.
-
-- Process management — ps, top, htop, kill, nice, renice
-- Disk & storage — df, du, lsblk, fdisk, mount, fstab
-- Systemd & services — systemctl, journalctl, writing .service files
-- Networking basics — ip, ping, curl, ss, netstat
-- SSH & remote access — key generation, ssh-copy-id, rsync, scp
-- User & group administration — /etc/passwd, /etc/shadow, visudo
-
----
-
-## 📖 Phase 4 — Networking & Security
-
-> Goal: Configure a firewall, read system logs, and troubleshoot network issues.
-
-- Firewall management — ufw, iptables, nftables
-- File security & encryption — gpg, openssl, SUID/SGID, ACLs
-- Logs & monitoring — /var/log, journalctl, logrotate
-- Network troubleshooting — tcpdump, nmap, wireshark, iperf3
-- Hardening basics — fail2ban, SSH hardening, CIS benchmarks
-
----
-
-## 📖 Phase 5 — Advanced Topics
-
-> Goal: Set up Docker, write cron jobs, and understand the Linux boot process.
-
-- Advanced bash scripting — regex, error handling, getopts, heredoc
-- Kernel & boot process — GRUB, kernel modules, /proc, /sys, dmesg
-- Containers & virtualization — Docker, Dockerfile, Docker Compose, KVM
-- Automation — cron, at, Ansible basics, systemd timers
-- Performance tuning — vmstat, iostat, strace, perf, iotop
-- Storage advanced — LVM, RAID with mdadm, NFS, Samba, ZFS
-
----
-
-## 🛠️ Practice Projects
-
-### Beginner
-- [ ] System info script — hostname, IP, uptime, disk, RAM
-- [ ] Backup script — tar + gzip with date stamping
-- [ ] Automate user creation from a CSV file
-
-### Intermediate
-- [ ] Set up a LAMP/LEMP stack from scratch
-- [ ] Log parser using awk, grep, and sed
-- [ ] Cron-based disk usage monitor with alert
-- [ ] SSH hardening on a VPS (DigitalOcean / Linode)
-
-### Advanced
-- [ ] Dockerize a web app with docker-compose.yml
-- [ ] Ansible playbook to provision a fresh Ubuntu server
-- [ ] Prometheus + Grafana monitoring setup
-- [ ] LVM snapshot and restore workflow
-- [ ] Custom firewall ruleset with ufw / iptables
+| Script | What it does |
+|--------|-------------|
+| [system-info.sh](./phase-2-shell/scripts/system-info.sh) | Prints hostname, OS, kernel, CPU, memory, disk |
+| [backup.sh](./phase-2-shell/scripts/backup.sh) | Compresses folder with date stamp, keeps last 7 |
+| [ufw-setup.sh](./phase-4-networking/firewall-rules/ufw-setup.sh) | Sets up standard UFW rules |
+| [server-setup.sh](./phase-5-advanced/projects/server-setup.sh) | Full server provisioning from scratch |
+| [monitor.sh](./scripts/monitor.sh) | Live health dashboard — CPU, memory, disk, ports |
 
 ---
 
@@ -147,22 +112,8 @@ learning-linux/
 | Cheatsheet | Description |
 |------------|-------------|
 | [commands.md](./cheatsheets/commands.md) | Most-used Linux commands with examples |
-| [permissions.md](./cheatsheets/permissions.md) | chmod, chown, octal notation reference |
+| [permissions.md](./cheatsheets/permissions.md) | chmod, chown, octal, ACLs reference |
 | [vim.md](./cheatsheets/vim.md) | Vim survival guide — modes, save, quit, search |
-
----
-
-## 🔗 Resources
-
-| Resource | What it covers |
-|----------|----------------|
-| [linuxjourney.com](https://linuxjourney.com) | Interactive beginner lessons |
-| [overthewire.org/bandit](https://overthewire.org/wargames/bandit) | Terminal challenges (game format) |
-| [tldr.sh](https://tldr.sh) | Short practical command examples |
-| [explainshell.com](https://explainshell.com) | Break down any command visually |
-| [linuxupskillchallenge.org](https://linuxupskillchallenge.org) | 20-day guided sysadmin course |
-| [The Linux Command Line (free PDF)](http://linuxcommand.org/tlcl.php) | Best beginner book, completely free |
-| [LFS101 on edX](https://www.edx.org/course/introduction-to-linux) | Linux Foundation free course |
 
 ---
 
@@ -173,13 +124,27 @@ learning-linux/
 - [ ] Phase 3 — Can manage services, users, disks, and SSH into a remote server
 - [ ] Phase 4 — Can configure a firewall, read logs, and troubleshoot network issues
 - [ ] Phase 5 — Can set up Docker, write cron jobs, and understand the boot process
-- [ ] All phases — Can provision, secure, and maintain a Linux server from scratch
+- [ ] All phases — Can provision, secure, deploy, and monitor a Linux server from scratch
+
+---
+
+## 🔗 Resources
+
+| Resource | What it covers |
+|----------|----------------|
+| [linuxjourney.com](https://linuxjourney.com) | Interactive beginner lessons |
+| [overthewire.org/bandit](https://overthewire.org/wargames/bandit) | Terminal challenges as a game |
+| [tldr.sh](https://tldr.sh) | Short practical command examples |
+| [explainshell.com](https://explainshell.com) | Break down any command visually |
+| [linuxupskillchallenge.org](https://linuxupskillchallenge.org) | 20-day guided sysadmin course |
+| [The Linux Command Line — free PDF](http://linuxcommand.org/tlcl.php) | Best beginner book, free |
+| [LFS101 on edX](https://www.edx.org/course/introduction-to-linux) | Linux Foundation free course |
 
 ---
 
 ## 👤 About
 
-**Aniket Waichal** — Software Developer with 3.5+ years of experience specializing in GenAI, LLM-powered applications, and backend systems. This repo documents my journey into Linux and systems fundamentals to complement my backend and AI engineering background.
+**Aniket Waichal** — Software Developer with 3.5+ years of experience specialising in GenAI, LLM-powered applications, and backend systems. This repo documents my Linux and systems fundamentals journey to complement my backend and AI engineering background.
 
 - 💼 [LinkedIn](https://linkedin.com/in/your-profile)
 - 🐙 [GitHub](https://github.com/your-username)
