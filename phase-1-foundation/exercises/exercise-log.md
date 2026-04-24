@@ -43,6 +43,8 @@ mv copy_file.txt ../linux_practise/
 head file.txt
 tail file.txt
 less file.txt
+
+tail -f file.txt
 ```
 
 ### What worked
@@ -66,6 +68,13 @@ less file.txt
 - `../` is used to go to parent directory  
 - Always check location using `pwd` and `ls` before running commands  
 - Use `Ctrl + O` to save and `Ctrl + X` to exit in `nano`  
+- `tail -f` is used to monitor file changes in real time (like logs)
+
+- less Navigation
+- `↓ / ↑` → line up/down  
+- `Space` → next page  
+- `b` → previous page  
+- `q` → exit 
 
 ### Questions I still have
 - When should I use `less` vs `cat` in real scenarios?  
