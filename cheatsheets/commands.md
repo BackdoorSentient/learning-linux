@@ -187,3 +187,11 @@ curl -o file.zip https://url/file.zip   # download
 curl --retry 3 https://url              # retry on fail
 curl -s url | jq '.'                    # pretty JSON output
 ```
+
+## Special Cases
+```bash
+- File named `-` → use `cat ./-`
+- File with spaces → use quotes or `\`
+- File starting with `-` → use `--`
+JSON output
+```
