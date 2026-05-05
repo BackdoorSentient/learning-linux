@@ -394,22 +394,6 @@ This gives only the useful readable lines.
 
 ---
 
-## Login to Next Level
-
-Now login as `bandit10`:
-
-```bash
-ssh bandit10@bandit.labs.overthewire.org -p 2220
-```
-
-Use this password:
-
-```bash
-FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
-```
-
----
-
 ## Key Learning
 
 For messy or binary files, direct `grep` may only say:
